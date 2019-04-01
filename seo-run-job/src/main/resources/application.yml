@@ -1,0 +1,27 @@
+#定时任务线程数量
+poolSize: 30
+
+#定时任务睡眠时间 (毫秒)
+task:
+  sleep:
+     msecond: 1200000
+
+spring:
+  profiles:
+    active: local
+
+---
+spring:
+  profiles: local
+  http:
+    url:
+      push: http://localhost:8080/cooperation-question/iask/seo/push
+      pull: http://localhost:8080/cooperation-question/iask/seo/pull
+
+---    
+spring:
+  profiles: dev
+  http:
+    url:
+      push: http://open.iask.cn/iask/seo/push
+      pull: http://open.iask.cn/iask/seo/pull
